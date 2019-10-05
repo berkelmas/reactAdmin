@@ -1,0 +1,31 @@
+.HeaderContainer {
+    position: relative;
+    height : 3rem;
+    background-image : linear-gradient(to left bottom, #0277bd, #039be5);
+    display: block;
+    width: 100%;
+    box-shadow : 0 0 20px rgba(black, .6);
+    color : #f7f7f7;
+    z-index: 10;
+}
+
+.LogoContainer {
+
+    & img {
+        height : 3rem;
+    }
+}
+
+.UserContainer {
+    cursor : pointer;
+
+    @media only screen and (max-width: 600px) {
+        display : none!important ;
+      }
+}
+
+
+.ToggleIcon {
+    transition : all .2s;
+}
+

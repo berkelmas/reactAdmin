@@ -1,0 +1,14 @@
+.UserList {
+    list-style : none;
+}
+
+
+.UserItem {
+    text-decoration: none;
+    color : gray;
+    
+    &:hover {
+        text-decoration: none;
+        color : darken(gray, 10%);
+    }
+}

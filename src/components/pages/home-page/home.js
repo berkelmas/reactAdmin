@@ -4,39 +4,21 @@ import React from 'react';
 // import classes from './home.module.scss';
 
 // REDUX
-import { connect, useDispatch } from 'react-redux';
-
-// ACTIONS FOR REDUX ( AUTHACTIONS )
-import { loginAction, logoutAction } from '../../../store/actions/AuthActions';
-
-// MATERIAL UI
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { connect, useSelector } from 'react-redux';
 
 const HomePage = props => {
 
-    const dispatch = useDispatch()
-
-    const toggleAuthState = () => {
-        props.loggedIn ? dispatch(logoutAction()) : dispatch(loginAction());
-    };
+    const username = useSelector(state => state.AuthReducer.username)
 
     return (
         <div>
-            <p>Welcome to Home Page...</p>
-            {props.loggedIn ? 'Logged In' : 'NO Auth'}
-            <FormControlLabel
-                control={
-                    <Switch checked={props.loggedIn} onChange={toggleAuthState} color="primary" />
-                }
-                label="Login State"
-            />
+            <p>Welcome to Home Page: { username }</p>
         </div>
     );
 };
 
 const mapStateToProps = state => ({
-    loggedIn : state.AuthReducer.loggedIn
+    username : state.AuthReducer.username
 })
 
 export default connect(mapStateToProps)(HomePage);

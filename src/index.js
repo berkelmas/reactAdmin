@@ -6,6 +6,10 @@ import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
 
+// FONT AWESOME PRO IMPORT
+import './assets/fontawesome/css/all.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 // REDUX
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';

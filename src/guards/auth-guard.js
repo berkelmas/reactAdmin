@@ -1,7 +1,7 @@
 import React from 'react';
 
 // ROUTER
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 // REDUX
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ const AuthGuard = ({component : Component, ...rest}) => {
             return rest.loggedIn ?
             <Component {...props} />
             :
-            <p>You are not authorized to access... </p>
+            <Redirect to="/login" />
         }} />
     )
 

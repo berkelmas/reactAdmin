@@ -46,7 +46,7 @@ const UsersPage = props => {
                                     
                                     <ul className={classes.UserList}>
                                     {usersState.users.map(user => (
-                                    <NavLink className={classes.UserItem} key={user.id} to={`/users/${user.id}`}>
+                                    <NavLink className={classes.UserItem} key={user.id} to={`/main/users/${user.id}`}>
                                         <li>{user.name}</li>
                                     </NavLink>
                                     ))}
@@ -55,7 +55,7 @@ const UsersPage = props => {
                             )}
 
                     <Switch>
-                        <Route path={'/users/:id'} exact component={UserDetail} />
+                        <Route path={'/main/users/:id'} exact render={props => <UserDetail {...props} />} />
                     </Switch>
                 </div>
             </div>          
@@ -64,4 +64,4 @@ const UsersPage = props => {
     )
 };
 
-export default UsersPage;
+export default React.memo(UsersPage);
